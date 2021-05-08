@@ -71,9 +71,9 @@ main.wrapper{
 }
 
 #centerPart{
-    width: 50%;
+    width: 500px;
     background-color: #FFF;
-    padding: 15px;
+    padding: 15px 30px;
     position: relative;
     outline: 3px solid red;
     outline-offset: -5px;
@@ -91,7 +91,7 @@ main.wrapper{
 }
 
 .song-title{
-    background-color: #000;
+    background: rgba(0, 0,0, .85);
     color: #FFF;
     margin: 5px 0;
     padding: 7px;
@@ -99,8 +99,9 @@ main.wrapper{
 }
 
 .song-title:hover{
-    background-color: #fff;
+    background: rgba(255, 255, 255, .85);
     color: #FF0000;
+    font-weight: bold
 }
 
 .lyrics-tones{
