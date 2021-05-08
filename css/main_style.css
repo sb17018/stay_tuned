@@ -1,0 +1,114 @@
+body {
+    background-image: url(../img/keyboard.jpg);
+    background-color: red;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #fff;
+    height: 80px;
+    border-bottom: 5px solid #FF0000;
+    padding: 15px 0 0;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Poiret One', cursive;
+    font-size: 3em;
+    letter-spacing: -2px;
+    text-shadow: 1px 1px #FF0000;
+}
+
+nav{
+	 height: 30px;
+}
+
+nav p {
+    padding: 5px 10px;
+    margin: 0;
+    color: #FFF;
+    background-color: #000;
+    border-radius: 3px;
+    font-family: Montserrat, serif;
+    font-weight: bold;
+    box-shadow: 3px 3px #FFF;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+nav p:hover {
+    color: #000;
+    background-color: #FF0000;
+}
+
+.wrapper {
+    width: 80%;
+    /*border: 4px dashed grey;*/
+    margin: 0 auto;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    display: -webkit-flex;
+    /*border: 2px solid blue;*/
+    margin: 0;
+}
+
+main.wrapper{
+	margin-top: 40px;
+}
+
+.main-half{
+	opacity: .7;
+}
+
+#centerPart{
+    width: 50%;
+    background-color: #FFF;
+    padding: 15px;
+    position: relative;
+    outline: 3px solid red;
+    outline-offset: -5px;
+    z-index: -999;
+}
+
+#leftPart{
+    width: 30%;
+}
+
+#leftPart h3{
+	color: #FFF;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.song-title{
+    background-color: #000;
+    color: #FFF;
+    margin: 5px 0;
+    padding: 7px;
+    width: 105%;
+}
+
+.song-title:hover{
+    background-color: #fff;
+    color: #FF0000;
+}
+
+.lyrics-tones{
+    color: #FF0000;
+    font-weight: bold;
+    margin: .5em 0 0;
+}
+
+.lyrics-verse{
+    margin: 0 0 .5em;
+}

@@ -1,0 +1,55 @@
+#rightPart{
+    width: 20%;
+    margin: 0 0 0 20px;
+    position: relative;
+    height: 500px;
+    opacity: 1;
+    color: #ffffff;
+    border: 1px solid #3d3a3a;
+    background-image: linear-gradient(150deg, rgb(7, 1, 1),rgb(7, 1, 1), rgb(31, 27, 27), rgb(19, 13, 13));
+}
+
+#rightPart h2{
+   text-align: center;
+   margin-bottom: 0;
+}
+
+#rightPart hr{
+    margin: auto;
+    width: 90%;
+}
+
+#chordMarks{
+    height: 270px;
+    top: 100px;
+    left: 20px;
+    position: absolute; 
+    /* border: 1px solid #3d3a3a; */
+}
+
+.the-chord, .empty-note{
+    height: 54px;
+    line-height: 54px;
+    margin: 0;
+    font-size: 2em;
+    vertical-align: middle;
+}
+
+.the-chord-current{
+    color: #FF0000;
+}
+
+.empty-note{
+    color: #524545;
+}
+
+#mainKnobGrove{
+    width: 6px;
+    height: 270px;
+    position: absolute;
+    top: 100px;
+    left: 60%;
+    border: 1px solid #3d3a3a;
+    background-image: linear-gradient(90deg,rgb(31, 27, 27), rgb(7, 1, 1), rgb(19, 13, 13));
+    /* z-index: -1; */
+}

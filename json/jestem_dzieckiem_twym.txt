@@ -1,0 +1,8 @@
+{"title":"Jestem dzieckiem Twym",
+"verses":[
+	{"tones":[{"tone": "G", "position": 60},{"tone": "G", "position": 165}], "lyrics":"Ty przynosisz mi zwycięstwa pieśń,"},
+	{"tones":[{"tone": "C", "position": 30},{"tone": "D", "position": 70},{"tone": "G", "position": 150}], "lyrics":"Ty dotykasz słowem swym,"},
+	{"tones":[{"tone": "G", "position": 45},{"tone": "G", "position": 155}], "lyrics":"Dajesz wolność mi z sideł wokół mnie"},
+	{"tones":[{"tone": "A", "position": 30},{"tone": "D", "position": 60},{"tone": "G", "position": 90}], "lyrics":"Więc znika każdy lęk."}
+   	]
+}
