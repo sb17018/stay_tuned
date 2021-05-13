@@ -20,17 +20,19 @@
 
 #saveChangeBtnBorder{
     width: 100%;
-    background: linear-gradient(30deg,red 5%, white, rgb(124, 27, 27), rgb(124, 27, 27), rgb(124, 27, 27));
+    border: 1px solid #3d3a3a;
+    background: linear-gradient(30deg,red 5%, white, rgb(124, 27, 27), rgb(124, 27, 27), rgb(216, 50, 50));
     margin-bottom: 10px;
-    padding: 2px 0;
+    padding: 1px 0;
     text-align: center;
     position: relative;
     box-shadow: rgb(7, 1, 1) 0 3px 2px;
 }
 
 #saveChangeBtn{
-    width: 96%;
+    width: 98%;
     font-weight: bold;
+    padding: 2px 0;
     color: #fff;
     background-image: linear-gradient(80deg, red 2%, rgb(252, 149, 149), rgb(177, 2, 2), red);
     border: 0;
