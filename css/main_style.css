@@ -71,6 +71,7 @@ main.wrapper{
 }
 
 #centerPart{
+    margin-top: 30px;
     width: 500px;
     background-color: #FFF;
     padding: 15px 30px;
@@ -81,7 +82,13 @@ main.wrapper{
 }
 
 #leftPart{
+    margin-top: 30px;
     width: 30%;
+}
+
+#rightPart{
+    margin: 0 0 0 20px;
+    width: 20%;
 }
 
 #leftPart h3{

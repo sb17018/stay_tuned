@@ -1,6 +1,5 @@
-#rightPart{
-    width: 20%;
-    margin: 0 0 0 20px;
+#mainKnobPanel{
+    width: 100%;
     position: relative;
     height: 500px;
     opacity: 1;
@@ -9,14 +8,33 @@
     background-image: linear-gradient(150deg, rgb(7, 1, 1),rgb(7, 1, 1), rgb(31, 27, 27), rgb(19, 13, 13));
 }
 
-#rightPart h2{
+#mainKnobPanel h2{
    text-align: center;
    margin-bottom: 0;
 }
 
-#rightPart hr{
+#mainKnobPanel hr{
     margin: auto;
     width: 90%;
+}
+
+#saveChangeBtnBorder{
+    width: 100%;
+    background: linear-gradient(30deg,red 5%, white, rgb(124, 27, 27), rgb(124, 27, 27), rgb(124, 27, 27));
+    margin-bottom: 10px;
+    padding: 2px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: rgb(7, 1, 1) 0 3px 2px;
+}
+
+#saveChangeBtn{
+    width: 96%;
+    font-weight: bold;
+    color: #fff;
+    background-image: linear-gradient(80deg, red 2%, rgb(252, 149, 149), rgb(177, 2, 2), red);
+    border: 0;
+    position: relative;
 }
 
 #chordMarks{
