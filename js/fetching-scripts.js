@@ -9,7 +9,7 @@ function fetchTitles(){
         titles = JSON.parse(this.responseText);
         for(n in titles.titles){
             console.log("tree");
-            titleOptions += '<div class="song-title" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\')">' + titles.titles[n].title + '</div>';
+            titleOptions += '<div class="song-title-row" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\'), changeCircleColor(this)" onmouseout="resetCircleColor(this)"><div class="red-circle-icon"><div class="red-circle-icon-inner-ring"></div></div><div class="song-title">' + titles.titles[n].title + '</div></div>';
         }
         console.log(titleOptions);
         document.getElementById("songTitles").innerHTML = titleOptions;
@@ -46,6 +46,16 @@ function fetchLyrics(title){
     };
     xmlhttp.open("GET", "json/" + title + ".txt", true);
     xmlhttp.send();
+}
+
+function changeCircleColor(elmt){
+    var brightCircle = elmt.getElementsByClassName('red-circle-icon')[0];
+    brightCircle.style.backgroundImage = 'radial-gradient(farthest-corner at 40% 40%, white, rgb(250, 74, 74), rgb(250, 74, 74))';
+}
+
+function resetCircleColor(elmt){
+    var brightCircle = elmt.getElementsByClassName('red-circle-icon')[0];
+    brightCircle.style.backgroundImage = 'radial-gradient(farthest-corner at 20% 20%, white, red, red)';
 }
 
 function setFirstChord(){
