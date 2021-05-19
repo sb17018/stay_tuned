@@ -48,7 +48,6 @@ function setFirstChord(){
 
 function setChordMarks(){
     const firstChord = sessionStorage.getItem("firstChord");
-    var firstChordPosInTable = chordsTable.indexOf(firstChord);
     var chordMarks = document.getElementsByClassName('the-chord');
     var chordsToChose = limitChordsToChanges();
     for(i = 0; i < chordMarks.length; i++){
@@ -90,6 +89,12 @@ function limitChordsToChanges(){
         }
     }
     return availableChords;
+}
+
+function getEmptyChords(){
+    var emptyChordsAfterMainChord = document.querySelectorAll('.the-chord-current~.empty-chord').length;
+    var emptyChordsBeforeMainChord = document.querySelectorAll('.empty-chord:not(.the-chord-current~.empty-chord)').length;
+    return [emptyChordsBeforeMainChord, emptyChordsAfterMainChord];
 }
 
 function resetKnobPosition(){

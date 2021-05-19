@@ -1,6 +1,8 @@
 //Make the DIV element draggable:
 function dragElement(elmnt){
   var pos1 = pos2 = 0;
+  var allowedKnobPositionDown = 505 - getEmptyChords()[1]*54;
+  var allowedKnobPositionUp = 285 + getEmptyChords()[0]*54;
   var theChordMarks = document.getElementsByClassName('not-empty-chord');
   elmnt.onmousedown = dragMouseDown;
 
@@ -19,7 +21,7 @@ function dragElement(elmnt){
     e.preventDefault();
     // set the element's new position:
     pos2 = e.clientY;
-    if((pos2 <= 505) && (pos2 >= 285)){
+    if((pos2 <= allowedKnobPositionDown) && (pos2 >= allowedKnobPositionUp)){
       elmnt.style.top = (pos2 - 200) + "px";
     }
     colorChosenChord(theChordMarks, elmnt.offsetTop - 90);
