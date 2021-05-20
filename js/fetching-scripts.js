@@ -1,17 +1,18 @@
 var titles, titleOptions = "", myArr,  theLyrics, i, theTonesInLine, verseTopPosition, toneInSongOriginal = [];
 
 function fetchTitles(){
+    var openingTitleInList = "";
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-        console.log("AJAX");
         if (this.readyState == 4 && this.status == 200) {
-        console.log("Ckkeee");
         titles = JSON.parse(this.responseText);
         for(n in titles.titles){
-            console.log("tree");
+            if(openingTitleInList === ""){
+                openingTitleInList = titles.titles[n].value;
+                fetchLyrics(openingTitleInList);
+            }
             titleOptions += '<div class="song-title" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\')">' + titles.titles[n].title + '</div>';
         }
-        console.log(titleOptions);
         document.getElementById("songTitles").innerHTML = titleOptions;
         }
         else{
@@ -24,24 +25,21 @@ function fetchTitles(){
 
 function fetchLyrics(title){
     songLyrics = "";
-    // console.log("IIII");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-    //   console.log("AJAX");
       if (this.readyState == 4 && this.status == 200) {
-        // console.log("JSON");
         theLyrics = JSON.parse(this.responseText);
-        setFirstChord();
-        setChordMarks();
-        // resetKnobPosition();
         for(n in theLyrics.verses){
             songLyrics += '<p class="lyrics-tones">';
             for(m in theLyrics.verses[n].tones){
                 songLyrics += '<span style="position:relative;left:'+ theLyrics.verses[n].tones[m].position + 'px;">' + theLyrics.verses[n].tones[m].tone + '</span>';
             }
             songLyrics += '</p><p class="lyrics-verse">' + theLyrics.verses[n].lyrics + '</p>';
-          }
-          document.getElementById("centerPart").innerHTML = songLyrics;
+        }
+        document.getElementById("centerPart").innerHTML = songLyrics;
+        setFirstChord();
+        setChordMarks();
+        resetKnobPosition();
       }
     };
     xmlhttp.open("GET", "json/" + title + ".txt", true);
@@ -51,8 +49,6 @@ function fetchLyrics(title){
 function setFirstChord(){
     sessionStorage.clear();
     sessionStorage.setItem("firstChord", theLyrics.verses[0].tones[0].tone);
-    // firstChordPosInTable = sessionStorage.getItem("firstChord");
-    // console.log("FCPIT+: " + firstChordPosInTable);
 }
 
 function setChordMarks(){
@@ -68,9 +64,6 @@ function setChordMarks(){
             chordMarks[i].innerHTML = chordsTable[firstChordPosInTable - 2 + i];
         }
     }
-    console.log("sdf: " + chordsTable[firstChordPosInTable - 2 + i]);
-    // firstChordPosInTable = sessionStorage.getItem("firstChord");
-    // console.log("FCPIT+: " + firstChordPosInTable);
 }
 
 function resetKnobPosition(){
