@@ -26,6 +26,7 @@ function dragElement(elmnt){
     }
     colorChosenChord(theChordMarks, elmnt.offsetTop - 90);
     adjustChords();
+    saveChangeBtnActivate();
   }
 
   function closeDragElement() {
