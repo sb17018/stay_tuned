@@ -1,5 +1,7 @@
-#mainKnobPanel{
-    width: 100%;
+#rightPart{
+    width: 140px;
+    min-width: 140px;
+    margin: 0 0 0 20px;
     position: relative;
     height: 500px;
     opacity: 1;
@@ -47,7 +49,7 @@
     /* border: 1px solid #3d3a3a; */
 }
 
-.the-chord, .empty-note{
+.the-chord, .empty-chord{
     height: 54px;
     line-height: 54px;
     margin: 0;
@@ -59,8 +61,11 @@
     color: #FF0000;
 }
 
-.empty-note{
-    color: #524545;
+.empty-chord{
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
 }
 
 #mainKnobGrove{
@@ -68,8 +73,8 @@
     height: 270px;
     position: absolute;
     top: 100px;
-    left: 60%;
-    border: 1px solid #3d3a3a;
+    left: 83px;
+    border: 1px solid #504f4f;
     background-image: linear-gradient(90deg,rgb(31, 27, 27), rgb(7, 1, 1), rgb(19, 13, 13));
-    /* z-index: -1; */
+    box-shadow: rgb(109, 56, 56) 2px 2px 3px inset;/* z-index: -1; */
 }
