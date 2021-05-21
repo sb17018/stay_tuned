@@ -1,7 +1,7 @@
-#rightPart{
+#mainKnobPanel{
     width: 140px;
     min-width: 140px;
-    margin: 0 0 0 20px;
+    margin: 0;
     position: relative;
     height: 500px;
     opacity: 1;
@@ -21,10 +21,11 @@
 }
 
 #saveChangeBtnBorder{
-    width: 100%;
+    width: 140px;
+    min-width: 140px;
     border: 1px solid #3d3a3a;
     background: linear-gradient(30deg,red 5%, white, rgb(124, 27, 27), rgb(124, 27, 27), rgb(216, 50, 50));
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     padding: 1px 0;
     text-align: center;
     position: relative;
