@@ -1,11 +1,16 @@
 var titles, titleOptions = "", myArr,  theLyrics, i, theTonesInLine, verseTopPosition, toneInSongOriginal = [];
 
 function fetchTitles(){
+    var openingTitleInList = "";
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         titles = JSON.parse(this.responseText);
         for(n in titles.titles){
+            if(openingTitleInList === ""){
+                openingTitleInList = titles.titles[n].value;
+                fetchLyrics(openingTitleInList);
+            }
             titleOptions += '<div class="song-title" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\')">' + titles.titles[n].title + '</div>';
         }
         document.getElementById("songTitles").innerHTML = titleOptions;
