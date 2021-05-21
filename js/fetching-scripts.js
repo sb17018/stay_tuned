@@ -5,16 +5,15 @@ function fetchTitles(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        titles = JSON.parse(this.responseText);
-        for(n in titles.titles){
-            titleOptions += '<div class="song-title-row" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\'), changeCircleColor(this)" onmouseout="resetCircleColor(this)"><div class="red-circle-icon"><div class="red-circle-icon-inner-ring"></div></div><div class="song-title">' + titles.titles[n].title + '</div></div>';
-            if(openingTitleInList === ""){
-                openingTitleInList = titles.titles[n].value;
-                fetchLyrics(openingTitleInList);
+            titles = JSON.parse(this.responseText);
+            for(n in titles.titles){
+                if(openingTitleInList === ""){
+                    openingTitleInList = titles.titles[n].value;
+                    fetchLyrics(openingTitleInList);
+                }
+                titleOptions += '<div class="song-title-row" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\'), changeCircleColor(this)" onmouseout="resetCircleColor(this)"><div class="red-circle-icon"><div class="red-circle-icon-inner-ring"></div></div><div class="song-title">' + titles.titles[n].title + '</div></div>';
             }
-            titleOptions += '<div class="song-title" onmouseover="fetchLyrics(\'' + titles.titles[n].value + '\')">' + titles.titles[n].title + '</div>';
-        }
-        document.getElementById("songTitles").innerHTML = titleOptions;
+            document.getElementById("songTitles").innerHTML = titleOptions;
         }
         else{
             document.getElementById("songTitles").innerHTML = "NO SONG YET";
