@@ -52,22 +52,58 @@ function setFirstChord(){
 }
 
 function setChordMarks(){
+    const firstChord = sessionStorage.getItem("firstChord");
     var chordMarks = document.getElementsByClassName('the-chord');
-    var firstChordPosInTable = chordsTable.indexOf(sessionStorage.getItem("firstChord"));
+    var chordsToChose = limitChordsToChanges();
     for(i = 0; i < chordMarks.length; i++){
-        if(chordsTable[firstChordPosInTable - 2 + i] == undefined){
-            chordMarks[i].setAttribute('class', 'empty-chord');
-            chordMarks[i].textContent = "♪";
+        if(chordsToChose[i] == "♪"){
+            chordMarks[i].setAttribute('class', 'the-chord empty-chord');
+        }
+        else if(chordsToChose[i] == firstChord){
+            chordMarks[i].setAttribute('class', 'the-chord not-empty-chord the-chord-current');
         }
         else{
-            chordMarks[i].setAttribute('class', 'the-chord');
-            chordMarks[i].innerHTML = chordsTable[firstChordPosInTable - 2 + i];
+            chordMarks[i].setAttribute('class', 'the-chord not-empty-chord');
+        }
+        chordMarks[i].textContent = chordsToChose[i];
+    }
+}
+
+function limitChordsToChanges(){
+    const range = 2;
+    const chordsOverLyrics = document.querySelectorAll('.lyrics-tones span');
+    var firstChordPosInTable = chordsTable.indexOf(sessionStorage.getItem("firstChord"));
+    var minChordPos = chordsTable.length -1, maxChordPos = 0;
+    chordsOverLyrics.forEach(elmnt => {
+        var chordPosInTable = chordsTable.indexOf(elmnt.textContent);
+        if(chordPosInTable < minChordPos){
+            minChordPos = chordPosInTable; 
+        }
+        if(chordPosInTable > maxChordPos){
+            maxChordPos = chordPosInTable; 
+        }
+    });
+
+    var availableChords = [];
+    for(i = firstChordPosInTable - range; i <= firstChordPosInTable + range; i++){
+        if(firstChordPosInTable - i > minChordPos || i - firstChordPosInTable > chordsTable.length - 1 - maxChordPos){
+            availableChords.push("♪");
+        }else
+        {
+            availableChords.push(chordsTable[i]);
         }
     }
+    return availableChords;
+}
+
+function getEmptyChords(){
+    var emptyChordsAfterMainChord = document.querySelectorAll('.the-chord-current~.empty-chord').length;
+    var emptyChordsBeforeMainChord = document.querySelectorAll('.empty-chord:not(.the-chord-current~.empty-chord)').length;
+    return [emptyChordsBeforeMainChord, emptyChordsAfterMainChord];
 }
 
 function resetKnobPosition(){
     document.getElementById('mainKnob').style.top = '200px';
 }
 
-chordsTable = ['A', 'B', 'C', 'D', 'E', 'Em', 'F','G','H'];
+chordsTable = ['A','B','C','D','E','Em','F','G','H'];
