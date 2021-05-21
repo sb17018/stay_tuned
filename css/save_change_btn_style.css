@@ -1,0 +1,39 @@
+#saveChangeBtnBorder{
+    width: 140px;
+    min-width: 140px;
+    border: 1px solid #3d3a3a;
+    background: linear-gradient(30deg,red 5%, white, rgb(124, 27, 27), rgb(124, 27, 27), rgb(216, 50, 50));
+    margin: 0 0 10px 0;
+    padding: 1px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: rgb(7, 1, 1) 0 3px 2px;
+}
+
+.save-change-btn-inactive{
+    width: 98%;
+    font-weight: bold;
+    padding: 2px 0;
+    color: rgb(161, 159, 159);
+    background-image: linear-gradient(80deg, rgb(146, 5, 5) 2%, rgb(197, 110, 110), rgb(112, 4, 4), rgb(146, 5, 5));
+    border: 0;
+    position: relative;
+}
+
+.save-change-btn-active{
+    width: 98%;
+    font-weight: bold;
+    text-shadow: white 0 0 1px;
+    padding: 2px 0;
+    color: #fff;
+    background-image: linear-gradient(80deg, red 2%, rgb(252, 149, 149), rgb(177, 2, 2), red);
+    border: 0;
+    position: relative;
+}
+
+.save-change-btn-active:hover{
+    text-shadow: white 0 0 3px;
+    color: #fff;
+    background-image: linear-gradient(80deg, rgb(255, 65, 65) 1%, rgb(255, 193, 193), rgb(224, 17, 17), rgb(255, 65, 65));
+    cursor: pointer;
+}
