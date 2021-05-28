@@ -1,3 +1,4 @@
+
 var theLyrics;
 
 function fetchTitles(chosenTitle){

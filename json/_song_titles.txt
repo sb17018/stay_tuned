@@ -1,1 +1,6 @@
-{"titles":[{"value":"jestem_dzieckiem_twym", "title":"Jestem dzieckiem Twym"},{"value":"duchu_swiety_zapraszamy_cie", "title":"Duchu Święty, zapraszamy Cię"}]}
+{"titles":[
+    {"value":"jestem_dzieckiem_twym", "title":"Jestem dzieckiem Twym"},{"value":"duchu_swiety_zapraszamy_cie", "title":"Duchu Święty, zapraszamy Cię"},
+    {"value":"lulajze_jezuniu", "title":"Lulajże, Jezuniu"},{"value":"przybiezeli_do_betlejem", "title":"Przybieżeli do Betlejem"},
+    {"value":"gdy_sliczna_panna", "title":"Gdy śliczna Panna"},{"value":"wsrod_nocnej_ciszy", "title":"Wśród nocnej ciszy"},
+    {"value":"cicha_noc", "title":"Cicha noc"}
+    ]}
