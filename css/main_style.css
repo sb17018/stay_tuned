@@ -101,19 +101,39 @@ main.wrapper{
     background-color: rgba(0, 0,0, .85);
     color: #FFF;
     margin: 0 -15px 0 5px;
-    padding: 7px;
+    padding: 10px;
     display: inline-block;
     width: 220px;
 }
 
 .song-title:hover{
     background: rgba(255, 255, 255, .85);
+    color: #000;
+}
+
+.song-title-chosen, .song-title-chosen:hover{
+    /* border-bottom: 2px solid #FF0000; */
+    background: rgba(255, 255, 255, .85);
     color: #FF0000;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+
+.red-underline{
+    /* border-top: 2px solid #FF0000; */
+    border-bottom: 3px solid #FF0000;
+    width: 100%;
+    padding-bottom: 4px;
+    padding-right: 9px;
+    /* background: rgba(255, 255, 255, .85); */
+    /* color: #FF0000;
+    font-weight: bold; */
 }
 
 .song-title-row{
     margin: 10px 0;
     width: 250px;
+    position: relative;
 }
 
 .song-title-row .red-circle-icon{
