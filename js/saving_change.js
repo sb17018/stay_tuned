@@ -16,6 +16,30 @@ function saveChangeBtnActivate(){
     }
 }
 
+function saveChange(title, myCallback){
+    // console.log(JSON.stringify(newTones));
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("The title" + theTitle);
+            var theLyrics = JSON.parse(this.responseText);
+            var changedChords = document.querySelectorAll('.lyrics-tones span');
+            var changedChordNumberSequence = 0;
+            for(n in theLyrics.verses){
+                // songLyrics += '<p class="lyrics-tones">';
+                for(m in theLyrics.verses[n].tones){
+                    theLyrics.verses[n].tones[m].tone = changedChords[changedChordNumberSequence].textContent;
+                    changedChordNumberSequence++; 
+                }
+            }
+            myCallback(title, theLyrics);
+        }
+    };
+    xmlhttp.open("GET", "json/" + title + ".txt?nocache=123", true);
+    xmlhttp.setRequestHeader("Cache-Control", "no-cache");
+    xmlhttp.send();
+}
+
 function writeInFile(title, newTones){
     // console.log(JSON.stringify(newTones));
     var xmlhttp = new XMLHttpRequest();
