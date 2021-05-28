@@ -20,6 +20,7 @@ function fetchTitles(){
         }
     };
     xmlhttp.open("GET", "json/_song_titles.txt", true);
+    xmlhttp.setRequestHeader("Cache-Control", "no-cache");
     xmlhttp.send();
 }  
 
@@ -42,7 +43,8 @@ function fetchLyrics(title){
         resetKnobPosition();
       }
     };
-    xmlhttp.open("GET", "json/" + title + ".txt", true);
+    xmlhttp.open("GET", "json/" + title + ".txt?nocache=123", true);
+    xmlhttp.setRequestHeader("Cache-Control", "no-cache");
     xmlhttp.send();
 }
 
