@@ -24,6 +24,7 @@ function fetchTitles(chosenTitle){
         }
     };
     xmlhttp.open("GET", "json/_song_titles.txt", true);
+    xmlhttp.setRequestHeader("Cache-Control", "no-cache");
     xmlhttp.send();
 }  
 
@@ -47,6 +48,7 @@ function fetchLyrics(title){
       }
     };
     xmlhttp.open("GET", "json/" + title + ".txt?nocache=123", true);
+    xmlhttp.setRequestHeader("Cache-Control", "no-cache");
     xmlhttp.send();
 }
 
