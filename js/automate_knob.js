@@ -58,8 +58,10 @@ function adjustChords(){
     var chosenChordPositionInAllChords = chordsTable.indexOf(chosenChord.textContent);
     var diffInChords = chosenChordPositionInAllChords - lyricsFirstChordPositionInAllChords;
     chordsOverLyrics.forEach(e => {
-      var chordPositionInAllChords = chordsTable.indexOf(e.textContent);
-      e.textContent = chordsTable[chordPositionInAllChords + diffInChords];
+      if(e.textContent != ""){
+        var chordPositionInAllChords = chordsTable.indexOf(e.textContent);
+        e.textContent = chordsTable[chordPositionInAllChords + diffInChords];
+      }
     });
   }
 }

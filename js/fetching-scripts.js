@@ -83,11 +83,13 @@ function limitChordsToChanges(){
     var minChordPos = chordsTable.length -1, maxChordPos = 0;
     chordsOverLyrics.forEach(elmnt => {
         var chordPosInTable = chordsTable.indexOf(elmnt.textContent);
-        if(chordPosInTable < minChordPos){
-            minChordPos = chordPosInTable; 
-        }
-        if(chordPosInTable > maxChordPos){
-            maxChordPos = chordPosInTable; 
+        if(chordPosInTable >= 0){
+            if(chordPosInTable < minChordPos){
+                minChordPos = chordPosInTable; 
+            }
+            if(chordPosInTable > maxChordPos){
+                maxChordPos = chordPosInTable; 
+            }
         }
     });
 
